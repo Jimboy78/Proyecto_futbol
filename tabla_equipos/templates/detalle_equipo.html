@@ -13,24 +13,36 @@
         
 {% endblock nav %}
 {% block main %}
-    <h1>Tabla de equipos</h1>
+    <br>
+        <td><a href="{% url 'tabla_de_equipos' %}">Volver</a></td>
+    <br>
+    <h1>{{ equipo.nombre }}</h1>
+    <br>
+    <img src="https://i.pinimg.com/236x/11/77/d4/1177d4059a8e4360594030c1f98a868b.jpg" alt="">
     <table>
         <tr>
             <th><h4>Puesto │</h4></th>
-            <th>Nombre │</th>
             <th>Puntos  │</th>
             <th>Partidos ganados  │</th>
             <th>Partidos perdidos  │</th>
+            <th>Partidos empatados  │</th>
+            <th>Doles favor  │</th>
+            <th>Goles contras  │</th>
+            <th>Diferencia goles  │</th>
+            <th>Posicion  │</th>
+            <th>Localidad  │</th>
         </tr>
-        {% for equipo in object_list %} 
             <tr>
                 <td>{{ equipo.posicion }}</td>
-                <td>{{ equipo.nombre }}</td>
                 <td>{{ equipo.puntos }}</td>
                 <td>{{ equipo.partidos_ganados }}</td>
                 <td>{{ equipo.partidos_perdidos }}</td>
-                <td><a href= {% url 'detalle_equipo' equipo.id %} >Ver mas </a</td>
+                <td>{{equipo.partidos_empatados}}</td>
+                <td>{{equipo.goles_favor}}</td>
+                <td>{{equipo.goles_contra}}</td>
+                <td>{{equipo.diferencia_goles}}</td>
+                <td>{{equipo.posicion}}</td>
+                <td>{{equipo.localidad}}</td>
             </tr>
-        {% endfor %}
     </table>
 {% endblock main %}
