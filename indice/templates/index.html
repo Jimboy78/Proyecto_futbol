@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <header>
+        {% block nav %}
+        <nav>
+            <ul>
+                <li><a href={% url 'inicio' %}>Inicio</a></li>
+                <li><a href={% url 'acerca_de' %}>Acerca de</a></li>
+                <li><a href={% url 'equipos' %}>Equipos</a></li>
+                <li><a href={% url 'contacto' %}>Contacto</a></li>
+            </ul>
+        </nav>
+        {% endblock nav %}
+    </header>
+    {% block main %}
+    <main >
+        <h1>Inicio</h1>
+        <img src="https://imagenes.elpais.com/resizer/_TbMK6TwGNfD-0xVj_fZdC4JUkE=/1960x1103/cloudfront-eu-central-1.images.arcpublishing.com/prisa/SU7EFDELFA7VVUEMTQNS26S4HQ.jpg" width="800" alt="img background">
+        <h1>Awante el fulvo</h1>
+        <h2>Se nota que no me querés
+            Se nota que ya no hay amor
+            Entonces ya no hay más que hacer </h2>
+        <section>
+            <div>
+                <p>
+                    Y yo me dedico al alcohol
+                    Se nota que no me querés
+                    Se nota que ya no hay amor
+                    Entonces ya no hay más que hacer
+                    Y yo me dedico al alcohol
+                    Amor, amor
+                    Porque vos
+                    Se nota que no me querés
+                    Se nota que ya no hay amor
+                    Entonces ya no hay más que hacer
+                <p>
+            </div>
+            <div>
+                <p>
+                    Y yo me dedico al alcohol
+                    Se nota que no me querés
+                    Se nota que ya no hay amor
+                    Entonces ya no hay más que hacer
+                    Y yo me dedico al alcohol
+                    Amor, amor, amor
+                    Porque vos
+                    Se nota que no me querés
+                    Se nota que ya no hay amor
+                    Entonces ya no hay más que hacer
+                    Y yo me dedico al alcohol
+                </p>
+            </div>
+        </section>
+    
+
+    </main>
+    {% endblock main %}
+
+    {% block footer %}
+    <hr>
+    <footer >
+        <div>
+            <nav > 
+                <il><a href= {% url 'acerca_de' %}  target="_blank">Acerca de</a></il>                                    
+                <il><a href= {% url 'contacto' %} target="_blank">Contacto</a></il>
+            </nav> 
+        </div>
+    </footer>
+    {% endblock footer %}
+</body>
+</html>
