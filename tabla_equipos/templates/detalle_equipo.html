@@ -1,0 +1,48 @@
+{% extends 'indice/templates/index.html' %}
+
+{% block nav %}
+
+        <nav>
+            <ul>
+                <li><a href={% url 'inicio' %}>Inicio</a></li>
+                <li><a href={% url 'acerca_de' %}>Acerca de</a></li>
+                <li><a href={% url 'equipos' %}>Atras</a></li>
+                <li><a href={% url 'contacto' %}>Contacto</a></li>
+            </ul>
+        </nav>
+        
+{% endblock nav %}
+{% block main %}
+    <br>
+        <td><a href="{% url 'tabla_de_equipos' %}">Volver</a></td>
+    <br>
+    <h1>{{ equipo.nombre }}</h1>
+    <br>
+    <img src="https://i.pinimg.com/236x/11/77/d4/1177d4059a8e4360594030c1f98a868b.jpg" alt="">
+    <table>
+        <tr>
+            <th><h4>Puesto │</h4></th>
+            <th>Puntos  │</th>
+            <th>Partidos ganados  │</th>
+            <th>Partidos perdidos  │</th>
+            <th>Partidos empatados  │</th>
+            <th>Doles favor  │</th>
+            <th>Goles contras  │</th>
+            <th>Diferencia goles  │</th>
+            <th>Posicion  │</th>
+            <th>Localidad  │</th>
+        </tr>
+            <tr>
+                <td>{{ equipo.posicion }}</td>
+                <td>{{ equipo.puntos }}</td>
+                <td>{{ equipo.partidos_ganados }}</td>
+                <td>{{ equipo.partidos_perdidos }}</td>
+                <td>{{equipo.partidos_empatados}}</td>
+                <td>{{equipo.goles_favor}}</td>
+                <td>{{equipo.goles_contra}}</td>
+                <td>{{equipo.diferencia_goles}}</td>
+                <td>{{equipo.posicion}}</td>
+                <td>{{equipo.localidad}}</td>
+            </tr>
+    </table>
+{% endblock main %}

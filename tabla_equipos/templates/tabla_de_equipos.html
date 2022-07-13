@@ -1,0 +1,36 @@
+{% extends 'indice/templates/index.html' %}
+
+{% block nav %}
+
+        <nav>
+            <ul>
+                <li><a href={% url 'inicio' %}>Inicio</a></li>
+                <li><a href={% url 'acerca_de' %}>Acerca de</a></li>
+                <li><a href={% url 'equipos' %}>Atras</a></li>
+                <li><a href={% url 'contacto' %}>Contacto</a></li>
+            </ul>
+        </nav>
+        
+{% endblock nav %}
+{% block main %}
+    <h1>Tabla de equipos</h1>
+    <table>
+        <tr>
+            <th><h4>Puesto │</h4></th>
+            <th>Nombre │</th>
+            <th>Puntos  │</th>
+            <th>Partidos ganados  │</th>
+            <th>Partidos perdidos  │</th>
+        </tr>
+        {% for equipo in object_list %} 
+            <tr>
+                <td>{{ equipo.posicion }}</td>
+                <td>{{ equipo.nombre }}</td>
+                <td>{{ equipo.puntos }}</td>
+                <td>{{ equipo.partidos_ganados }}</td>
+                <td>{{ equipo.partidos_perdidos }}</td>
+                <td><a href= {% url 'detalle_equipo' equipo.id %} >Ver mas </a</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock main %}

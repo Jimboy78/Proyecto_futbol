@@ -1,0 +1,17 @@
+{% extends 'indice/templates/index.html' %}
+
+
+{% block nav %}
+<nav>
+    <ul>
+        <li><a href={% url 'inicio' %}>Inicio</a></li>
+        <li><a href={% url 'acerca_de' %}>Acerca de</a></li>
+        <li><a href={% url 'tabla_de_equipos' %}>Tabla de equipos</a></li>
+        <li><a href={% url 'contacto' %}>Contacto</a></li>
+    </ul>
+</nav>
+{% endblock nav %}
+
+{% block main %}
+    <h1>Equipos</h1>
+{% endblock main %}
